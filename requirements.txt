@@ -4,9 +4,7 @@ torchvision>=0.25.0
 numpy
 Pillow
 
-# transformers pinned <4.47 — versions >=4.47 block torch.load on torch<2.6 (CVE-2025-32434)
-# Switch to safetensors model weights to lift this restriction
-transformers==4.46.3
+transformers>=4.40.0
 sentencepiece
 tokenizers
 

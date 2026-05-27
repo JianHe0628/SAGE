@@ -45,3 +45,7 @@ Thumbs.db
 logs/
 outputs/
 results/
+
+# Debug / local test scripts
+debug_heatmap.py
+debug_heatmap*.png

@@ -4,7 +4,7 @@ defaults:
 
 # Stage 2 translation hyperparameters
 project: SAGE_Stage2
-batch_size: 2
+batch_size: 8
 epochs: 80
 comments: ""
 log_test: false

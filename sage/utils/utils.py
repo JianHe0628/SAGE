@@ -45,14 +45,9 @@ from torchvision.utils import save_image, make_grid
 from sage.utils.definition import *
 
 def plot_similarity_heatmap(similarity_matrix, title, output_dir, labels=False, count=0):
-    font_path = '/mnt/fast/nobackup/users/jl02958/Project/Slurm_LaunchPad/NotoSansSC-VariableFont_wght.ttf' # Assumes font is in the same directory
-    try:
-        my_font = fm.FontProperties(fname=font_path)
-    except FileNotFoundError:
-        print(f"Font file not found at {font_path}. Please check the path.")
-        # Fallback to default font to avoid crashing, though squares will appear.
-        my_font = fm.FontProperties() 
-    plt.rcParams['axes.unicode_minus'] = False 
+    font_path = os.environ.get('HEATMAP_FONT_PATH')
+    my_font = fm.FontProperties(fname=font_path) if font_path else fm.FontProperties()
+    plt.rcParams['axes.unicode_minus'] = False
 
     # Ensure similarity_matrix is a numpy array
     similarity_matrix = np.array(similarity_matrix.detach().cpu())
@@ -62,7 +57,7 @@ def plot_similarity_heatmap(similarity_matrix, title, output_dir, labels=False, 
     plt.figure(figsize=(fig_size, 8))
     if labels:
         ax = sns.heatmap(similarity_matrix, annot=False, cmap='Blues', xticklabels=False)
-        ax.set_xticks(range(len(labels)))
+        ax.set_xticks([i + 0.5 for i in range(len(labels))])
         ax.set_xticklabels(labels, rotation=45, ha='right', fontproperties=my_font)
     else:
         ax = sns.heatmap(similarity_matrix, annot=False, cmap='Blues')
