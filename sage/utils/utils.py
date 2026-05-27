@@ -34,8 +34,6 @@ try:
 except:
     pass
 from itertools import groupby
-import tensorflow as tf
-
 import matplotlib.pyplot as plt  # For graphics
 import matplotlib.font_manager as fm
 import matplotlib
@@ -380,6 +378,7 @@ def GlossPadding(input_ids, gt_gloss, attention_mask):
     return torch.tensor(new_input_ids), torch.tensor(new_gt_gloss), torch.tensor(new_mask)
 
 def ctc_decode(gloss_probabilities,sgn_lengths):
+    import tensorflow as tf
     gloss_probabilities = gloss_probabilities.cpu().detach().numpy()
     ctc_decode, _ = tf.nn.ctc_beam_search_decoder(
                         inputs=gloss_probabilities,
