@@ -19,19 +19,30 @@ The pretrained encoder is connected to a full MBart encoder-decoder and fine-tun
 ## Installation
 
 ```bash
-conda activate mae_slt
+conda create -n sage python=3.10 -y
+conda activate sage
 
-# Additional packages not in base env
-pip install timm
-pip install vidaug @ git+https://github.com/okankop/vidaug
+# PyTorch — match your CUDA version at https://pytorch.org/get-started/locally
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+
+# All other dependencies
+pip install -r requirements.txt
+```
+
+For headless / cluster environments (no display server), use `opencv-python-headless` instead of `opencv-python`:
+```bash
+pip install opencv-python-headless
 ```
 
 For the data preparation scripts only (pseudo-gloss extraction):
 ```bash
 pip install spacy
+python -m spacy download de_core_news_lg
 ```
 
-> Tested with Python 3.10, PyTorch 2.11, CUDA 12.8.
+> Tested with Python 3.10, PyTorch 2.10, CUDA 12.8.
+>
+> **Note:** `transformers` is pinned to `4.46.3` in `requirements.txt`. Versions ≥ 4.47 block `torch.load` on PyTorch < 2.6 (CVE-2025-32434). To lift this restriction, convert your model weights to safetensors format.
 
 ## Data Preparation
 
@@ -42,8 +53,6 @@ SAGE requires three precomputed support files per dataset:
 | Metadata | `data.metadata_path` | Pseudo-glosses + video translations (step 1) |
 | Segment annotations | `data.segment_path` | Frame-level sign segments (step 2) |
 | Sentence embeddings | `data.sentence_embedding_path` | MBart token embeddings per video (step 3) |
-
-An LMDB image store (`data.lmdb_path`) must also be built from the raw video frames.
 
 ### 1. Generate metadata
 
@@ -106,7 +115,7 @@ data:
   metadata_path:    support_files/metadata/phoenix14T_metadata.pkl
   segment_path:     support_files/phoenix14T_segments.pkl
   sentence_embedding_path: support_files/phoenix14T_sent_embeddings.pkl
-  lmdb_path: /path/to/Phoenix14T_Segments_ImgBytes
+  img_path: /path/to/phoenix-2014T/features/fullFrame-210x260px
 model:
   tokenizer:   pretrain_models/MBart_trimmed
   transformer: pretrain_models/MBart_trimmed
@@ -144,21 +153,6 @@ python stage2_translation.py \
   resume=out/stage2/SAGE_.../best_checkpoint.pth \
   eval=true
 ```
-
-## Results
-
-### Phoenix-2014T
-
-| Method | Dev BLEU-4 | Test BLEU-4 |
-|--------|-----------|------------|
-| SAGE (ours) | — | — |
-
-### CSL-Daily
-
-| Method | Dev BLEU-4 | Test BLEU-4 |
-|--------|-----------|------------|
-| SAGE (ours) | — | — |
-
 ## Citation
 
 If you find this work useful, please cite:

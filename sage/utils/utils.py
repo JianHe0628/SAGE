@@ -62,7 +62,7 @@ def plot_similarity_heatmap(similarity_matrix, title, output_dir, labels=False, 
     plt.figure(figsize=(fig_size, 8))
     if labels:
         ax = sns.heatmap(similarity_matrix, annot=False, cmap='Blues', xticklabels=False)
-        ax.set_xticks(range(n))
+        ax.set_xticks(range(len(labels)))
         ax.set_xticklabels(labels, rotation=45, ha='right', fontproperties=my_font)
     else:
         ax = sns.heatmap(similarity_matrix, annot=False, cmap='Blues')
