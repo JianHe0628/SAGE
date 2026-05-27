@@ -50,7 +50,7 @@ resume: ""
 start_epoch: 0
 eval: false
 ex_unmatched: false
-num_workers: 4
+num_workers: 8
 pin_mem: true
 input_size: 224
 resize: 256
