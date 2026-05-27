@@ -1,0 +1,61 @@
+defaults:
+  - sage
+  - _self_
+
+# Stage 1 pretraining hyperparameters
+batch_size: 16
+epochs: 80
+inloss_weight: 0.5
+seg_annotation: ""
+max_segment_length: 45
+num_heatmaps: 5
+finetune: ""
+
+# Optimizer
+opt: sgd
+opt_eps: 1.0e-9
+opt_betas: null
+clip_grad: null
+momentum: 0.9
+weight_decay: 0.0
+
+# LR schedule
+sched: cosine
+lr: 1.0e-2
+lr_noise: null
+lr_noise_pct: 0.67
+lr_noise_std: 1.0
+warmup_lr: 1.0e-6
+min_lr: 1.0e-8
+decay_epochs: 30
+warmup_epochs: 0
+cooldown_epochs: 10
+patience_epochs: 10
+decay_rate: 0.1
+gamma: 0.922
+td_lr: 1.0e-3
+
+loss_lambda: 1.0
+
+# W&B
+entity: null
+project: SAGE_Stage1
+
+# Runtime
+output_dir: ""
+comments: ""
+device: cuda
+seed: 0
+resume: ""
+start_epoch: 0
+eval: false
+ex_unmatched: false
+num_workers: 4
+pin_mem: true
+input_size: 224
+resize: 256
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

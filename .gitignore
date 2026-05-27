@@ -1,0 +1,47 @@
+# Model weights and checkpoints
+pretrain_models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# Support/auxiliary files
+support_files/
+
+# Experiment tracking
+wandb/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and outputs
+*.log
+logs/
+outputs/
+results/
