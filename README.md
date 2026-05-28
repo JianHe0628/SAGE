@@ -238,7 +238,7 @@ If you find this work useful, please cite:
 
 ## Acknowledgements
 
-This codebase builds upon [GFSLT-VLP](https://arxiv.org/abs/2307.14768) (Zhou et al., ICCV 2023). The CLCL contrastive objective is adapted from [Zeng et al. (2023)](https://arxiv.org/abs/2303.12793). We thank the authors for open-sourcing their work.
+This codebase builds upon [GFSLT-VLP](https://arxiv.org/abs/2307.14768) (Zhou et al., ICCV 2023). The CLCL contrastive objective is adapted from [Cheng et al. (2023)](https://arxiv.org/abs/2303.12793). We thank the authors for open-sourcing their work.
 
 ## License
 
