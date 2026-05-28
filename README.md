@@ -7,7 +7,7 @@
   <a href="https://arxiv.org/abs/2507.09266">
     <img src="https://img.shields.io/badge/ArXiv-2507.09266-red" alt="ArXiv"/>
   </a>
-  <img src="https://img.shields.io/badge/MSLRT_2025-Best%20Paper-FFD700" alt="Best Paper Award"/>
+  <img src="https://img.shields.io/badge/MSLR_2025-Best%20Paper-FFD700" alt="Best Paper Award"/>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
   </a>
