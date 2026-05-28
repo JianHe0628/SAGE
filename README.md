@@ -7,6 +7,7 @@
   <a href="https://arxiv.org/abs/2507.09266">
     <img src="https://img.shields.io/badge/ArXiv-2507.09266-red" alt="ArXiv"/>
   </a>
+  <img src="https://img.shields.io/badge/MSLRT_2025-Best%20Paper-FFD700" alt="Best Paper Award"/>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
   </a>
@@ -16,7 +17,7 @@
   <img src="assets/Img2.jpeg" alt="SAGE model overview" width="850"/>
 </div>
 
-Official implementation of **SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation**, accepted at the ICCV Workshop on Multi-modal Sign Language Recognition and Translation (MSLR) 2025.
+Official implementation of **SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation**. **Best Paper Award** at the ICCV Workshop on Multi-modal Sign Language Recognition and Translation (MSLRT) 2025.
 
 ---
 
@@ -28,9 +29,9 @@ Sign language translation (SLT) is typically bottlenecked by the need for gloss-
 
 <div align="center">
   <img src="assets/Img1.png" alt="Efficiency comparison of segment-level encoding" width="450"/>
-  <br>
-  <em>Figure 1. Segment-level encoding yields shorter, more expressive sequences compared to frame-level approaches, improving both efficiency and translation quality.</em>
 </div>
+
+*Figure 1. Segment-level encoding yields shorter, more expressive sequences compared to frame-level approaches, improving both efficiency and translation quality.*
 
 ### Stage 1 — Cross-Lingual Contrastive Learning (CLCL) Pretraining
 
@@ -38,9 +39,9 @@ The visual encoder is pretrained by aligning segment-level sign features with ps
 
 <div align="center">
   <img src="assets/Img3.jpg" alt="CLCL contrastive loss" width="450"/>
-  <br>
-  <em>Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See <a href="https://arxiv.org/abs/2303.12793">Zeng et al. (2023)</a> for details.</em>
 </div>
+
+*Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See [Zeng et al. (2023)](https://arxiv.org/abs/2303.12793) for details.*
 
 ### Stage 2 — Translation Fine-tuning
 
