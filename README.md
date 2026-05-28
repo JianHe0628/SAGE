@@ -1,6 +1,6 @@
 # SAGE: Segment-Aware Gloss-Free Sign Language Translation
 
-<p align="center">
+<div align="center">
   <a href="https://openaccess.thecvf.com/content/ICCV2025W/MSLR/papers/Low_SAGE_Segment-Aware_Gloss-Free_Encoding_for_Token-Efficient_Sign_Language_Translation_ICCVW_2025_paper.pdf">
     <img src="https://img.shields.io/badge/ICCVW-2025-blue" alt="ICCVW 2025"/>
   </a>
@@ -10,11 +10,11 @@
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
   </a>
-</p>
+</div>
 
-<p align="center">
+<div align="center">
   <img src="assets/Img2.jpeg" alt="SAGE model overview" width="850"/>
-</p>
+</div>
 
 Official implementation of **SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation**, accepted at the ICCV Workshop on Multi-modal Sign Language Recognition and Translation (MSLR) 2025.
 
@@ -26,21 +26,21 @@ Sign language translation (SLT) is typically bottlenecked by the need for gloss-
 
 **Key idea:** rather than treating the entire signing video as a flat sequence of frames, SAGE partitions the video into semantically meaningful sign segments. Each segment is encoded independently and pooled into a single compact token, dramatically reducing sequence length while preserving sign-level structure.
 
-<p align="center">
+<div align="center">
   <img src="assets/Img1.png" alt="Efficiency comparison of segment-level encoding" width="450"/>
-</p>
-
-*Figure 1. Segment-level encoding yields shorter, more expressive sequences compared to frame-level approaches, improving both efficiency and translation quality.*
+  <br>
+  <em>Figure 1. Segment-level encoding yields shorter, more expressive sequences compared to frame-level approaches, improving both efficiency and translation quality.</em>
+</div>
 
 ### Stage 1 — Cross-Lingual Contrastive Learning (CLCL) Pretraining
 
 The visual encoder is pretrained by aligning segment-level sign features with pseudo-gloss text embeddings extracted from MBart. The contrastive objective is based on [CLCL](https://arxiv.org/abs/2303.12793). Pseudo-glosses are automatically derived from translation sentences via POS tagging — no manual gloss annotation is required.
 
-<p align="center">
+<div align="center">
   <img src="assets/Img3.jpg" alt="CLCL contrastive loss" width="450"/>
-</p>
-
-*Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See [Zeng et al. (2023)](https://arxiv.org/abs/2303.12793) for details.*
+  <br>
+  <em>Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See <a href="https://arxiv.org/abs/2303.12793">Zeng et al. (2023)</a> for details.</em>
+</div>
 
 ### Stage 2 — Translation Fine-tuning
 
