@@ -17,7 +17,7 @@
   <img src="assets/Img2.jpeg" alt="SAGE model overview" width="850"/>
 </div>
 
-Official implementation of **SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation**. **Best Paper Award** at the ICCV Workshop on Multi-modal Sign Language Recognition and Translation (MSLRT) 2025.
+Official implementation of **SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation**. **Best Paper Award** at the ICCV Workshop on Multi-modal Sign Language Recognition (MSLR) 2025.
 
 ---
 
