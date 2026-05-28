@@ -41,7 +41,7 @@ The visual encoder is pretrained by aligning segment-level sign features with ps
   <img src="assets/Img3.jpg" alt="CLCL contrastive loss" width="450"/>
 </div>
 
-*Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See [Zeng et al. (2023)](https://arxiv.org/abs/2303.12793) for details.*
+*Figure 2. Cross-Lingual Contrastive Learning (CLCL) loss aligns visual segment features with pseudo-gloss text embeddings in a shared embedding space. See [Cheng et al. (2023)](https://arxiv.org/abs/2303.12793) for details.*
 
 ### Stage 2 — Translation Fine-tuning
 
