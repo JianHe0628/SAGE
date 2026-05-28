@@ -2,7 +2,7 @@ name: SAGE
 data:
   train_label_path: ./data/Phonexi-2014T/labels.train
   segment_path: support_files/phoenix14T_segments.pkl
-  img_path: /mnt/fast/datasets/singlevideo/phoenix-2014T/features/fullFrame-210x260px
+  img_path: ???  # pass on the command line: data.img_path=/path/to/frames
   max_length: 300
   metadata_path: support_files/metadata/phoenix14T_metadata.pkl
   sentence_embedding_path: support_files/phoenix14T_sent_embeddings.pkl
@@ -12,6 +12,6 @@ training:
   wandb: online # online or disabled
   bf16: true
 model:
-  tokenizer: /vol/research/signVision/Projects/GFSLT-VLP/pretrain_models/MBart_trimmed
-  transformer: /vol/research/signVision/Projects/GFSLT-VLP/pretrain_models/MBart_trimmed
-  visual_encoder: /vol/research/signVision/Projects/GFSLT-VLP/pretrain_models/mytran
+  tokenizer: ./pretrain_models/MBart_trimmed
+  transformer: ./pretrain_models/MBart_trimmed
+  visual_encoder: ./pretrain_models/mytran

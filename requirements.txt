@@ -1,38 +1,35 @@
-# Core
-torch>=2.10.0
-torchvision>=0.25.0
-numpy
-Pillow
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0
+torchvision==0.25.0
 
-transformers>=4.40.0
-sentencepiece
-tokenizers
+# Core
+numpy==2.2.6
+Pillow==12.0.0
+transformers==4.56.1
+sentencepiece==0.2.1
+tokenizers==0.22.0
 
 # Vision / augmentation
 timm==1.0.27
-opencv-python-headless
-scikit-image
-scipy
+opencv-python-headless==4.13.0.92
+scipy==1.15.3
+scikit-image==0.25.2
 vidaug @ git+https://github.com/okankop/vidaug@1c1ddf2640fe4a9171267d64ae5e3bd70c24d54a
 
 # Config / training utilities
-hydra-core>=1.3.0
-omegaconf>=2.3.0
-einops
-loguru
-tqdm
-wandb
+hydra-core==1.3.2
+omegaconf==2.3.0
+einops==0.8.1
+loguru==0.7.3
+tqdm==4.67.1
+wandb==0.21.3
 
 # Visualisation
-seaborn
-matplotlib
+seaborn==0.13.2
+matplotlib==3.10.6
 
 # Evaluation
-sacrebleu
+sacrebleu==2.6.0
 
-# Stage 2 gloss decoding (lazy-imported, only needed if ctc_decode is called)
-# tensorflow
-
-# Data preparation scripts only
-# spacy
-# python -m spacy download de_core_news_lg
+# Data preparation (pseudo-gloss extraction)
+spacy==3.8.14

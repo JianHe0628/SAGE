@@ -35,13 +35,13 @@ video-to-translation mappings alongside the pseudo-gloss content.
 Usage:
   # Phoenix-2014T
   python scripts/prepare_segment_annotations.py phx14t \
-    --segs support_files/segment_annotations/phoenix14T_segmentor_outs.pt \
+    --segs support_files/segment_annotations/SAGE/phoenix14T_segmentor_outs.pt \
     --metadata support_files/metadata/phoenix14T_metadata.pkl \
     --output support_files/phoenix14T_segments.pkl
 
   # CSL-Daily
   python scripts/prepare_segment_annotations.py csldaily \
-    --segs support_files/segment_annotations/csldaily_segmentor_outs.pt \
+    --segs support_files/segment_annotations/SAGE/csldaily_segmentor_outs.pt \
     --metadata support_files/metadata/csldaily_metadata.pkl \
     --output support_files/csldaily_segments.pkl
 """
